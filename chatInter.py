@@ -60,7 +60,7 @@ Competition for USA, Canada, and International entrepreneurs representing any bu
 GrantWatch ID#: 160904
 
 **[VIEW FULL GRANT »](https://usa.grantwatch.com/grant/160904/competition-for-usa-canada-and-international-nonprofit-and-for-profit-entrepreneurs-for-ventures-that-reduce-poverty.html)**'
- Here are 3 examples of grants that does not align with our goals:
+ Here are 5 examples of grants that does not align with our goals:
  '****[Grants to USA, Canada, and International Nonprofits and For-Profits for Research on Problem ...](https://usa.grantwatch.com/grant/207442/grants-to-usa-canada-and-international-nonprofits-and-for-profits-for-research-on-problem-gambling-behavior.html)****
 
 Deadline *07/14/23*
@@ -85,7 +85,13 @@ Deadline *06/23/23*
 
 Awards of $1,000 to USA teachers to recognize outstanding educational methods for teaching students about economics. Recipients are K-12 teachers of any subject. The goal is to reward teachers for using innovative teaching practices to cultivate a rich understanding of...
 
-GrantWatch ID#: 143081'
+GrantWatch ID#: 143081
+ ****[Grants to USA and Territories Nursing and Medical Educators for Career Development](https://usa.grantwatch.com/grant/184749/grants-and-in-kind-support-to-usa-nursing-and-medical-educators-for-career-development.html)****
+
+Deadline: 09/15/23
+****[Grants to USA Nonprofits, For-Profits, Tribes, and IHEs to Train Students to Administer Services to Tribal Communities](https://usa.grantwatch.com/grant/181818/grants-to-usa-nonprofits-for-profits-tribes-and-ihes-to-train-students-to-administer-services-to-tribal-communities.html)****
+
+Deadline: 06/12/23'
 
 Please elaborate on Atlantis' mission and align your grant selection accordingly, with reference to the examples provided avove too. Include the corresponding links for each grant that matches our mission. Make sure to provide the grants in the format they were originally presented.
 
