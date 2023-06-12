@@ -87,7 +87,7 @@ with textcontainer:
     ...
 
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key="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")
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=st.secrets["API_KEY"])
 ...
 conversation = ConversationChain(memory=st.session_state.buffer_memory, prompt=prompt_template, llm=llm, verbose=True)
 
