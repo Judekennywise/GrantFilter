@@ -8,6 +8,7 @@ from langchain.agents import initialize_agent
 import streamlit as st
 from streamlit_chat import message
 
+#Tools the agent use to search the internet
 search = SerpAPIWrapper(serpapi_api_key=st.secrets['SERP_API_KEY'])
 tools = [
     Tool(
@@ -16,14 +17,18 @@ tools = [
         description="useful for when you need to answer questions about current events or the current state of the world"
     ),
 ]
-
+#memory for the model to remember last inputs from user
 memory = ConversationBufferMemory(memory_key="chat_history")
+
+#hardcode AI welcome message
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
 
+#Define session for user input
 if 'requests' not in st.session_state:
     st.session_state['requests'] = []
 
+#add memory to session
 if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=memory
 
@@ -32,17 +37,18 @@ st.title("Alphaflow Chatbot")
 ...
 response_container = st.container()
 textcontainer = st.container()
-
+#Accept input from user and use split by (-) to return a list 
 with textcontainer:
     with st.form(key='myform', clear_on_submit=True):
         queries = st.text_area("Query:", key="input")
-        prompts = queries.split("-")
+        prompts = queries.split("-") # The list of prompt that will be looped over
         #query = [st.text_input("Query: ", key="input")]
         submit = st.form_submit_button("Enter")
 
 llm=OpenAI(openai_api_key=st.secrets['OPENAI_KEY'],temperature=0)
 agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory= st.session_state.buffer_memory)
 
+#If user enters input, loop over input and run the agent
 if queries:
     for query in prompts:
         with st.spinner("typing..."):
