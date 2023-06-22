@@ -15,13 +15,13 @@ tools = [
     Tool(
         name = "Current Search",
         func=search.run,
-        description="useful for when you need to answer questions about current events or the current state of the world"
+        description="useful for when you need to answer questions about current events or make research on a particular subject"
     ),
 ]
 template = """You are a ResearcherBot, you will be given a series of input from a user that is based on a workflow\
 You are to take the inputs one after the other and perform each sequencially.
-
-
+Perform each task specifically and right away without asking further questions..
+Your response should be the result of work, except you are not given a specific task.
 
 The inputs you are to run as a workflow will be inputed next by the user.
 
