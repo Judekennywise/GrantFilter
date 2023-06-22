@@ -2,6 +2,7 @@ from langchain.agents import Tool
 from langchain.agents import AgentType
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI
+from langchain import OpenAI, PromptTemplate
 from langchain.utilities import SerpAPIWrapper
 from langchain.agents import initialize_agent
 
@@ -17,6 +18,16 @@ tools = [
         description="useful for when you need to answer questions about current events or the current state of the world"
     ),
 ]
+template = """You are a ResearcherBot, you will be given a series of input from a user that is based on a workflow\
+You are to take the inputs one after the other and perform each sequencially.
+
+
+
+The inputs you are to run as a workflow will be inputed next by the user.
+
+"""
+
+prompt = PromptTemplate(input_variables=["input", "chat_history"], template=template)
 #memory for the model to remember last inputs from user
 memory = ConversationBufferMemory(memory_key="chat_history")
 
@@ -50,6 +61,7 @@ agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_
 
 #If user enters input, loop over input and run the agent
 if queries:
+    response = agent_chain.run(input=prompt)
     for query in prompts:
         with st.spinner("typing..."):
             ...
