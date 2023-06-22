@@ -57,7 +57,7 @@ with textcontainer:
 
 llm=OpenAI(openai_api_key=st.secrets['OPENAI_KEY'],temperature=0)
 agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory= st.session_state.buffer_memory)
-response = agent_chain.run(template)
+response_ = agent_chain.run(template)
 #If user enters input, loop over input and run the agent
 if queries:
     
