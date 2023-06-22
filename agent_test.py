@@ -27,7 +27,6 @@ The inputs you are to run as a workflow will be inputed next by the user.
 
 """
 
-prompt = PromptTemplate(input_variables=["input", "chat_history"], template=template)
 #memory for the model to remember last inputs from user
 memory = ConversationBufferMemory(memory_key="chat_history")
 
@@ -61,7 +60,7 @@ agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_
 
 #If user enters input, loop over input and run the agent
 if queries:
-    response = agent_chain.run(input=prompt)
+    response = agent_chain.run(template)
     for query in prompts:
         with st.spinner("typing..."):
             ...
