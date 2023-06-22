@@ -18,7 +18,7 @@ tools = [
         description="useful for when you need to answer questions about current events or make research on a particular subject"
     ),
 ]
-template = """You are a ResearcherBot, you will be given a series of input from a user that is based on a workflow\
+template = """You role is a ResearcherBot, you will be given a series of input from a user that is based on a workflow\
 You are to take the inputs one after the other and perform each sequencially.
 Perform each task specifically and right away without asking further questions..
 Your response should be the result of work, except you are not given a specific task.
@@ -74,3 +74,6 @@ with response_container:
             message(st.session_state['responses'][i],key=str(i))
             if i < len(st.session_state['requests']):
                 message(st.session_state["requests"][i], is_user=True,key=str(i)+ '_user')
+
+        with st.expander("Show Messages"):
+                st.write(agent_chain.memory.buffer)
